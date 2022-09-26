@@ -56,9 +56,9 @@ public class QuizLogic {
         System.out.printf("Percentage: %d%n", percentage);
 
         if (percentage >= 80){
-            System.out.println("Pass");
+            System.out.println("You Have Passed");
         }else {
-            System.out.println("Fail");
+            System.out.println("You Have Failed");
         }
     }
     public void basicsPartTwo(){
@@ -110,9 +110,9 @@ public class QuizLogic {
         System.out.printf("Percentage: %d%n", percentage);
 
         if (percentage >= 80){
-            System.out.println("Pass");
+            System.out.println("You Have Passed");
         }else {
-            System.out.println("Fail");
+            System.out.println("You Have Failed");
         }
     }
     public void perfectum(){
@@ -161,9 +161,9 @@ public class QuizLogic {
         System.out.printf("Percentage: %d%n", percentage);
 
         if (percentage >= 80){
-            System.out.println("Pass");
+            System.out.println("You Have Passed");
         }else {
-            System.out.println("Fail");
+            System.out.println("You Have Failed");
         }
     }
     public void imperfectum(){
@@ -212,9 +212,9 @@ public class QuizLogic {
         System.out.printf("Percentage: %d%n", percentage);
 
         if (percentage >= 80){
-            System.out.println("Pass");
+            System.out.println("You Have Passed");
         }else {
-            System.out.println("Fail");
+            System.out.println("You Have Failed");
         }
     }
 }
