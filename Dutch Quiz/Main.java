@@ -2,10 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /*da suzdam menu ot opcii za vseki tip test
-        * naprimer 1. Past Tense
-        *           2. Future tense
-        * */
+ 
         Scanner scanner = new Scanner(System.in);
 
         System.out.println();

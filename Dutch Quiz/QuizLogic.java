@@ -2,12 +2,21 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class QuizLogic {
+    //for every type of quiz there is a method that is analogical to each one
+    //1. creating objects from the Question class(creating the questions and the options to it)
+    //2. creating a hashmap to store the question objects and their corresponding right answer
+    //3. foreach loop to print the questions and their options
+    //4. asking the user to input the right answer:
+    //4.1 with int correctAnswer = Character.compare(answer, map.getValue()) it will return 0 if the user input and the right answer(value) of the question(key) are the same char
+    //4.2 if the correctAnswer is equal to 0 than it is the correct answer else it is the wrong answer and the program prints the right one
+    //5. printing out the result; the user needs 80 or above % to pass the quiz
     Scanner scanner = new Scanner(System.in);
 
     int correctAnswerCount = 0;
     int wrongAnswerCount = 0;
-    public void basicsPartOne(){ //moga da napravq tova mainLogic method ot Map<> nadolo i za vsqko uprajnenie da vuvejdam vuprosite
-        Questions q1 = new Questions("Mijn naam is Pieter. Hoe _________ je?", "A. is", "B. ben", "C. heet", "D. noem");//suzdavam obekt za 1 vupros
+    public void basicsPartOne(){
+        //1.
+        Questions q1 = new Questions("Mijn naam is Pieter. Hoe _________ je?", "A. is", "B. ben", "C. heet", "D. noem");
         Questions q2 = new Questions("Hoe laat is het? Het is _________ . (15.35 uur).", "A. vijftien plus vijfendertig", "B. vijfentwintig voor vier", "C. vijf over half vier", "D. vijfendertig na vijftien");
         Questions q3 = new Questions("Wat _________ dat? €35 alstublieft.", "A. kost", "B. leeft", "C. is", "D. betaalt");
         Questions q4 = new Questions("Lonneke _________ elke dag drie kopjes koffie.", "A. drinken", "B. drinkt", "C. eet", "D. eten");
@@ -15,8 +24,9 @@ public class QuizLogic {
         Questions q6 = new Questions(" Goedemorgen. Wat wilt u _________ ?", "A. voor avondeten", "B. voor middageten", "C. voor thuis", "D. voor ontbijt");
         Questions q7 = new Questions("_________ , waar kan ik de pindakaas vinden?", "A. Zeg", "B. Alstublieft", "C. Pardon", "D. Graag");
 
-        HashMap<Questions, Character> hmap = new HashMap<>(); //tip kluch koito se izpolzva; izpolzvam hashmap vmesto interface Map zashtot hashmap pozvolqva dublikati na key-values
-        hmap.put(q1, 'C'); //vuprosa i veren otgovor;  polzvam obekt na 1 vupros kato kluch i koi e verniq otg kato Character
+        //2.
+        HashMap<Questions, Character> hmap = new HashMap<>();
+        hmap.put(q1, 'C');
         hmap.put(q2, 'B');
         hmap.put(q3, 'A');
         hmap.put(q4, 'B');
@@ -24,19 +34,21 @@ public class QuizLogic {
         hmap.put(q6, 'A');
         hmap.put(q7, 'C');
 
-        for (HashMap.Entry<Questions, Character> map : hmap.entrySet()){ //foreach ; ne podurja posledovatelen red; //Използва се за конструиране на набор от идентични елементи, съдържащи се в HashMap
-            System.out.println(map.getKey().getQuestion()); //vkarvam v map kluch
-            System.out.println(map.getKey().getOption1()); //vzemam stoinosta na klucha koito e opciq A s get ot clas question
+        //3.
+        for (HashMap.Entry<Questions, Character> map : hmap.entrySet()){
+            System.out.println(map.getKey().getQuestion());
+            System.out.println(map.getKey().getOption1());
             System.out.println(map.getKey().getOption2());
             System.out.println(map.getKey().getOption3());
             System.out.println(map.getKey().getOption4());
 
+            //4.
             System.out.println("Enter right answer: ");
-            char answer = scanner.next().toUpperCase().charAt(0); // input na veren otg, vzema samo edin character
+            char answer = scanner.next().toUpperCase().charAt(0);
 
-            //sravnenie s pravilniq otg s tozi koito e vuveden ot usera\
-            int correctAnswer = Character.compare(answer, map.getValue());//ppurviq parametur e ot usera a vtoriq ot verniq otg; ako e veren otg shte vurne 0
-            if (correctAnswer == 0){
+            //4.1
+            int correctAnswer = Character.compare(answer, map.getValue());
+            if (correctAnswer == 0){ //4.2
                 System.out.println("Correct Answer");
                 correctAnswerCount++;
             } else {
@@ -46,7 +58,7 @@ public class QuizLogic {
                 System.out.println(map.getValue());
             }
         }
-
+        //5.
         System.out.println();
         System.out.println("------Result-------");
         System.out.printf("Total Questions: %d%n", hmap.size());

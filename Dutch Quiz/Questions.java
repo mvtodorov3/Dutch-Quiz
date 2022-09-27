@@ -5,7 +5,7 @@ public class Questions {
     private String option3;
     private String option4;
 
-
+//constructor for the 3. and 4. quiz; the question will only have two options for a right answer
     public Questions(String question, String option1, String option2){ //for questions on past and perfects tenses
         this.question = question;
         this.option1 = option1;
@@ -19,7 +19,7 @@ public class Questions {
         this.option3 = option3;
         this.option4 = option4;
     }
-
+//getters and setters
     public String getQuestion() {
         return question;
     }
@@ -60,6 +60,7 @@ public class Questions {
         this.option4 = option4;
     }
 
+//This method is overridden so that the object values can be returned.
     @Override
     public String toString() { //ako ne se izpolzva tozi metod kogato printiram obekta shte mi printira adresa v pametta
         return "Questions{" +
