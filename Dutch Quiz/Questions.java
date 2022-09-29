@@ -62,7 +62,7 @@ public class Questions {
 
 //This method is overridden so that the object values can be returned.
     @Override
-    public String toString() { //ako ne se izpolzva tozi metod kogato printiram obekta shte mi printira adresa v pametta
+    public String toString() { 
         return "Questions{" +
                 "question='" + question + '\'' +
                 ", option1='" + option1 + '\'' +
